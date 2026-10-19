@@ -1,0 +1,60 @@
+{
+    "name": "@astroway/n8n-nodes-astroway",
+    "version": "0.1.0",
+    "description": "n8n node for the AstroWay astrology API: natal charts, synastry, transits, Vedic, Human Design, BaZi, numerology and tarot",
+    "license": "MIT",
+    "homepage": "https://api.astroway.info/en/integrations/",
+    "keywords": [
+        "n8n-community-node-package",
+        "n8n",
+        "astrology",
+        "astrology-api",
+        "natal-chart",
+        "horoscope",
+        "vedic",
+        "human-design",
+        "astroway"
+    ],
+    "author": {
+        "name": "AstroWay Team",
+        "email": "astroway.info@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/astroway/n8n-nodes-astroway.git"
+    },
+    "scripts": {
+        "build": "n8n-node build",
+        "build:watch": "tsc --watch",
+        "dev": "n8n-node dev",
+        "lint": "n8n-node lint",
+        "lint:fix": "n8n-node lint --fix",
+        "release": "n8n-node release",
+        "prepublishOnly": "n8n-node prerelease",
+        "generate": "node scripts/generate.mjs"
+    },
+    "files": [
+        "dist",
+        "!dist/**/*.tsbuildinfo"
+    ],
+    "n8n": {
+        "n8nNodesApiVersion": 1,
+        "strict": true,
+        "credentials": [
+            "dist/credentials/AstrowayApi.credentials.js"
+        ],
+        "nodes": [
+            "dist/nodes/Astroway/Astroway.node.js"
+        ]
+    },
+    "devDependencies": {
+        "@n8n/node-cli": "*",
+        "eslint": "9.32.0",
+        "prettier": "3.6.2",
+        "release-it": "^21.1.0",
+        "typescript": "5.9.2"
+    },
+    "peerDependencies": {
+        "n8n-workflow": "*"
+    }
+}

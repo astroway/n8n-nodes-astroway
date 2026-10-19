@@ -1,0 +1,10 @@
+{
+	"node": "@astroway/n8n-nodes-astroway.astroway",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Data & Storage", "Utility"],
+	"resources": {
+		"credentialDocumentation": [{ "url": "https://api.astroway.info/en/authentication/" }],
+		"primaryDocumentation": [{ "url": "https://github.com/astroway/n8n-nodes-astroway#readme" }]
+	}
+}

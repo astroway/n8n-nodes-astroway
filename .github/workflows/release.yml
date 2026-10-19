@@ -1,0 +1,38 @@
+name: release
+
+# npm Trusted Publishing (OIDC): no NPM_TOKEN secret, and every version ships
+# with a provenance statement, which n8n requires for verified community nodes.
+#
+# One-time setup on npmjs.com, package @astroway/n8n-nodes-astroway > Settings:
+#   Trusted Publisher -> GitHub Actions
+#     Repository:        astroway/n8n-nodes-astroway
+#     Workflow filename: release.yml
+#     Allowed actions:   tick "Allow npm publish"
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # npm 11 (bundled with Node 24) is needed for the OIDC exchange.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci --ignore-scripts
+      - run: npm run lint
+      - run: npm run build
+      # prepublishOnly refuses a plain npm publish unless RELEASE_MODE is set.
+      - run: npm publish --provenance --access public
+        env:
+          RELEASE_MODE: 'true'

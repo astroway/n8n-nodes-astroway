@@ -1,0 +1,466 @@
+{
+  "name": "AstroWay natal chart",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "8f1c2d3e-0000-4000-8000-000000000001",
+      "name": "Start",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "core",
+        "operation": "POST /chart",
+        "fields": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "date": "1990-03-15",
+            "time": "14:30",
+            "timezone": "Europe/Kyiv",
+            "latitude": 50.45,
+            "longitude": 30.52,
+            "fields": "planets.name,planets.longitude,houses.ascendant",
+            "precision": 2
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "date",
+              "displayName": "date",
+              "required": true,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "string"
+            },
+            {
+              "id": "time",
+              "displayName": "time",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "string"
+            },
+            {
+              "id": "timezoneOffset",
+              "displayName": "timezoneOffset",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "number",
+              "removed": true
+            },
+            {
+              "id": "timezone",
+              "displayName": "timezone",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "string"
+            },
+            {
+              "id": "latitude",
+              "displayName": "latitude",
+              "required": true,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "number"
+            },
+            {
+              "id": "longitude",
+              "displayName": "longitude",
+              "required": true,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "number"
+            },
+            {
+              "id": "houseSystem",
+              "displayName": "houseSystem",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "P",
+                  "value": "P"
+                },
+                {
+                  "name": "K",
+                  "value": "K"
+                },
+                {
+                  "name": "R",
+                  "value": "R"
+                },
+                {
+                  "name": "C",
+                  "value": "C"
+                },
+                {
+                  "name": "E",
+                  "value": "E"
+                },
+                {
+                  "name": "W",
+                  "value": "W"
+                },
+                {
+                  "name": "B",
+                  "value": "B"
+                },
+                {
+                  "name": "M",
+                  "value": "M"
+                },
+                {
+                  "name": "O",
+                  "value": "O"
+                },
+                {
+                  "name": "A",
+                  "value": "A"
+                },
+                {
+                  "name": "T",
+                  "value": "T"
+                },
+                {
+                  "name": "V",
+                  "value": "V"
+                },
+                {
+                  "name": "D",
+                  "value": "D"
+                },
+                {
+                  "name": "F",
+                  "value": "F"
+                },
+                {
+                  "name": "G",
+                  "value": "G"
+                },
+                {
+                  "name": "H",
+                  "value": "H"
+                },
+                {
+                  "name": "I",
+                  "value": "I"
+                },
+                {
+                  "name": "i",
+                  "value": "i"
+                },
+                {
+                  "name": "L",
+                  "value": "L"
+                },
+                {
+                  "name": "N",
+                  "value": "N"
+                },
+                {
+                  "name": "Q",
+                  "value": "Q"
+                },
+                {
+                  "name": "S",
+                  "value": "S"
+                },
+                {
+                  "name": "U",
+                  "value": "U"
+                },
+                {
+                  "name": "X",
+                  "value": "X"
+                },
+                {
+                  "name": "Y",
+                  "value": "Y"
+                }
+              ],
+              "removed": true
+            },
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "string",
+              "removed": true
+            },
+            {
+              "id": "city",
+              "displayName": "city",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "string",
+              "removed": true
+            },
+            {
+              "id": "zodiacType",
+              "displayName": "zodiacType",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "tropical",
+                  "value": "tropical"
+                },
+                {
+                  "name": "sidereal",
+                  "value": "sidereal"
+                }
+              ],
+              "removed": true
+            },
+            {
+              "id": "ayanamsaId",
+              "displayName": "ayanamsaId",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "number",
+              "removed": true
+            },
+            {
+              "id": "ayanamsa",
+              "displayName": "ayanamsa",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "fagan-bradley",
+                  "value": "fagan-bradley"
+                },
+                {
+                  "name": "lahiri",
+                  "value": "lahiri"
+                },
+                {
+                  "name": "de-luce",
+                  "value": "de-luce"
+                },
+                {
+                  "name": "raman",
+                  "value": "raman"
+                },
+                {
+                  "name": "krishnamurti",
+                  "value": "krishnamurti"
+                },
+                {
+                  "name": "kp",
+                  "value": "kp"
+                },
+                {
+                  "name": "yukteshwar",
+                  "value": "yukteshwar"
+                },
+                {
+                  "name": "jn-bhasin",
+                  "value": "jn-bhasin"
+                },
+                {
+                  "name": "true-citra",
+                  "value": "true-citra"
+                },
+                {
+                  "name": "djwhal-khul",
+                  "value": "djwhal-khul"
+                }
+              ],
+              "removed": true
+            },
+            {
+              "id": "cosmogram",
+              "displayName": "cosmogram",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "boolean",
+              "removed": true
+            },
+            {
+              "id": "timeUnknown",
+              "displayName": "timeUnknown",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "boolean",
+              "removed": true
+            },
+            {
+              "id": "lang",
+              "displayName": "lang",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "uk",
+                  "value": "uk"
+                },
+                {
+                  "name": "en",
+                  "value": "en"
+                },
+                {
+                  "name": "de",
+                  "value": "de"
+                },
+                {
+                  "name": "ru",
+                  "value": "ru"
+                },
+                {
+                  "name": "pl",
+                  "value": "pl"
+                },
+                {
+                  "name": "es",
+                  "value": "es"
+                },
+                {
+                  "name": "pt",
+                  "value": "pt"
+                },
+                {
+                  "name": "fr",
+                  "value": "fr"
+                },
+                {
+                  "name": "it",
+                  "value": "it"
+                },
+                {
+                  "name": "nl",
+                  "value": "nl"
+                },
+                {
+                  "name": "cs",
+                  "value": "cs"
+                },
+                {
+                  "name": "ro",
+                  "value": "ro"
+                },
+                {
+                  "name": "hu",
+                  "value": "hu"
+                },
+                {
+                  "name": "el",
+                  "value": "el"
+                },
+                {
+                  "name": "tr",
+                  "value": "tr"
+                },
+                {
+                  "name": "ar",
+                  "value": "ar"
+                },
+                {
+                  "name": "hi",
+                  "value": "hi"
+                },
+                {
+                  "name": "ja",
+                  "value": "ja"
+                },
+                {
+                  "name": "ko",
+                  "value": "ko"
+                },
+                {
+                  "name": "vi",
+                  "value": "vi"
+                },
+                {
+                  "name": "id",
+                  "value": "id"
+                }
+              ],
+              "removed": true
+            },
+            {
+              "id": "fields",
+              "displayName": "fields",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "string"
+            },
+            {
+              "id": "precision",
+              "displayName": "precision",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": false,
+              "display": true,
+              "type": "number"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "id": "8f1c2d3e-0000-4000-8000-000000000002",
+      "name": "Natal chart",
+      "type": "@astroway/n8n-nodes-astroway.astroway",
+      "typeVersion": 1,
+      "position": [
+        240,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Natal chart",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
