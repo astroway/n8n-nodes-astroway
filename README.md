@@ -12,7 +12,7 @@ In n8n open **Settings → Community Nodes → Install**, enter `@astroway/n8n-n
 ## Credentials
 
 1. Sign in at [api.astroway.info/dashboard](https://api.astroway.info/dashboard/) and create a key on the Keys page. The Free plan works.
-2. In n8n create an **AstroWay API** credential and paste the key. n8n checks it with a request that spends no credits.
+2. In n8n create an **AstroWay API** credential and paste the key. n8n checks it with `GET /v1/auth/keys/me`, which spends no credits. If the key has an endpoint scope, add `auth/keys/me` to it, or the check says `Forbidden` even though calls inside the scope work.
 
 Every call spends credits from the key owner's account; the price of each endpoint is in the [API reference](https://api.astroway.info/en/docs/api/).
 

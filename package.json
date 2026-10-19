@@ -1,6 +1,6 @@
 {
     "name": "@astroway/n8n-nodes-astroway",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "n8n node for the AstroWay astrology API: natal charts, synastry, transits, Vedic, Human Design, BaZi, numerology and tarot",
     "license": "MIT",
     "homepage": "https://api.astroway.info/en/integrations/",
