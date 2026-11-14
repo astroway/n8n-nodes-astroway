@@ -18,7 +18,7 @@ Every call spends credits from the key owner's account; the price of each endpoi
 
 ## Usage
 
-1. Add the **AstroWay** node, or search the node panel for the calculation, for example "Natal Chart".
+1. Add the **AstroWay** node: search the node panel for "AstroWay". The search finds the node itself, not its operations.
 2. Pick a **Resource** (a group such as Core, Vedic or Human Design) and an **Operation**.
 3. Under **Fields** the required fields are already listed; add optional ones with **Add field**. Object fields such as `chart1` in Synastry take JSON.
 4. Run the node. The output is the `data` part of the API answer; a list comes back as `{ "items": [...] }`.

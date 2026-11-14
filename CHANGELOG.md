@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+- README: the node panel search finds the AstroWay node, not its operations; pick the operation inside the node.
+
 ## 0.1.1
 
 - README: a key with an endpoint scope needs `auth/keys/me` in it for the credential check to pass.
